@@ -242,8 +242,9 @@ export async function hydrate_target(dest: Target): Promise<HydratedTarget> {
 				result = current_branch[i];
 			} else {
 				segment_dirty = false;
-	
+				console.log(`${part.i} pending`)
 				const { default: component, preload } = await components[part.i].js();
+				console.log(`${part.i} done`)
 	
 				let preloaded: object;
 	
@@ -270,6 +271,6 @@ export async function hydrate_target(dest: Target): Promise<HydratedTarget> {
 		props.status = 500;
 		branch = [];
 	}
-
+	console.log({ redirect, props, branch });
 	return { redirect, props, branch };
 }
