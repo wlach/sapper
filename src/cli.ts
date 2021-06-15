@@ -6,7 +6,7 @@ import * as pkg from '../package.json';
 import { elapsed, repeat, left_pad, format_milliseconds } from './utils';
 import { InvalidEvent, ErrorEvent, FatalEvent, BuildEvent, ReadyEvent } from './interfaces';
 
-const prog = sade('sapper').version(pkg.version);
+const prog = sade('@wlach/sapper').version(pkg.version);
 
 if (process.argv[2] === 'start') {
 	// remove this in a future version
