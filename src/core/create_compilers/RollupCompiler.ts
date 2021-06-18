@@ -43,14 +43,9 @@ export default function(files) {
 			|| document.querySelector('link[rel=stylesheet][href="' + href + '"]');
 		if (!link) {
 			link = document.createElement('link');
-			link.onload = fulfil;
-			link.onerror = fulfil;
 			link.rel = 'stylesheet';
 			link.href = href;
 			document.head.appendChild(link);
-		}
-		if (link.sheet) {
-			fulfil();
 		}
 		fulfil();
 	})}));
